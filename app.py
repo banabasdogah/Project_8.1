@@ -85,19 +85,11 @@ manufacturer_2 = st.selectbox(
 mask_filter = (df['manufacturer'] == manufacturer_1) | (df['manufacturer'] == manufacturer_2)
 df_filtered = df[mask_filter]
 
-# add a checkbox if a user wants to normalize the histogram
-normalize = st.checkbox('Normalize histogram key', value=True)
-if normalize:
-    histnorm ='percent'
-else:
-    histnorm = None
     
-# create a plotly histogram figure
-fig = px.histogram(df_filtered, 
+# create a plotly area chart figure
+fig = px.area(df_filtered, 
                       x='model_year',
-                      nbins=30,
-                      color='condition',
-                      histnorm=histnorm,
-                      barmode='overlay')  
+                      y='price',
+                      color='condition')  
 # display the figure with stream lit
 st.write(fig)

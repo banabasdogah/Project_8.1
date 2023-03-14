@@ -86,7 +86,7 @@ mask_filter = (df['manufacturer'] == manufacturer_1) | (df['manufacturer'] == ma
 df_filtered = df[mask_filter]
 
 # add a checkbox if a user wants to normalize the histogram
-normalize = st.checkbox('Normalize histogram', value=True)
+normalize = st.checkbox('Normalize histogram key', value=True)
 if normalize:
     histnorm ='percent'
 else:

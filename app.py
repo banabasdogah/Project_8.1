@@ -88,7 +88,7 @@ df_filtered = df[mask_filter]
     
 # create a plotly area chart figure
 fig = px.area(df_filtered, 
-                      x='model_year',
+                      x='manufacturer',
                       y='price',
                       color='condition')  
 # display the figure with stream lit
